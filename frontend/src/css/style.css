@@ -1,0 +1,282 @@
+.topheader
+{
+    /* background-color: #1f2839; */
+    /* background-color: #0C2924; */
+    background-color: #154d57;
+    height: 110px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topheader img
+{
+    width: 100px;
+    height: 100px;
+}
+
+
+
+.navbar-brand
+{
+    font-size: 25px;
+    font-weight: 900;
+    color: #154d57;
+    align-items: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.navbar-brand span
+{
+    color: #000000;
+}
+
+.navbar-brand:hover
+{
+    color:#154d57;
+    transform: translateY(-3px);
+    transition: transform 0.1s ease-in-out;
+}
+
+.navContainer
+{
+    background-color: #b7a08b;
+    border: 0.5px solid #154d57;
+    box-shadow: 0 0 2px whitesmoke, 0 0 5px #013220;
+    border-radius: 4px;
+}
+
+.nav-link
+{
+    font-size: 22px;
+    font-weight:500;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #000000;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.nav-link .navIcons
+{
+    color: #154d57;
+}
+
+.nav-link:hover
+{
+    color:#154d57;
+    transform: translateY(-3px);
+    transition: transform 0.1s ease-in-out;
+}
+
+.wrapper
+{
+    height: 100%;
+}
+
+
+.hero
+{
+    background: url("https://happay.com/blog/wp-content/uploads/sites/12/2022/09/baas-banking-as-a-service-.png");
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top -110px;
+}
+
+
+.serviceImg img
+{
+    height: 100%;
+    width: 100%;
+}
+
+
+.form-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    border: 2px solid; 
+    border-top-color: #17a2b8;   
+    border-left-color: #17a2b8;  
+    border-right-color: #154d57; 
+    border-bottom-color: #154d57; 
+    transition: all 0.3s ease-in-out;
+}
+
+.form-container label {
+    font-weight: bold;
+    color: #154d57;
+}
+
+.form-container input {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid;
+    border-top-color: #17a2b8;   
+    border-left-color: #17a2b8;  
+    border-right-color: #154d57; 
+    border-bottom-color: #154d57; 
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.form-container input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #17a2b8;
+    outline: none;
+    transform: scale(1.02);
+}
+
+
+
+.form-container button {
+    background: linear-gradient(135deg, #17a2b8, #154d57);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(23, 162, 184, 0.4);
+}
+
+
+.form-container .registerProm
+{
+    color: black;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.form-container2 {
+    width: 550px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    border: 2px solid; 
+    border-top-color: #17a2b8;   
+    border-left-color: #17a2b8;  
+    border-right-color: #154d57; 
+    border-bottom-color: #154d57; 
+    transition: all 0.3s ease-in-out;
+}
+
+.form-container2 label {
+    font-weight: bold;
+    color: #154d57;
+}
+
+.form-container2 input {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid;
+    border-top-color: #17a2b8;   
+    border-left-color: #17a2b8;  
+    border-right-color: #154d57; 
+    border-bottom-color: #154d57; 
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.form-container2 input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #17a2b8;
+    outline: none;
+    transform: scale(1.02);
+}
+
+
+
+.form-container2 button {
+    background: linear-gradient(135deg, #17a2b8, #154d57);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-container2 button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(23, 162, 184, 0.4);
+}
+
+
+.form-container2 .registerProm
+{
+    color: black;
+    font-size: 20px;
+    padding: 5px;
+}
+
+
+.loginTitle
+{
+    text-align: center;
+    color: #17a2b8;
+    padding-top: 10px;
+}
+
+.loginTitle span
+{
+    color: #154d57;
+}
+
+
+
+
+
+.footer {
+  background-color: #154d57;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links li {
+  display: inline;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
