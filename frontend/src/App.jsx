@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Registration from './pages/Registration'
 import Login from './pages/Login'
 import About from './pages/About'
+import Dashboard from './pages/Dashboard'
 
 const App = () => {
   return (
@@ -19,6 +20,11 @@ const App = () => {
           <Route index element={<Login />}/>
           <Route path='registration' element={<Registration />}/>
         </Route>
+      </Routes>
+
+      <Routes>
+
+        <Route path='dashboard' element={<Dashboard />} />
       </Routes>
       </BrowserRouter>
     </>

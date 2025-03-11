@@ -33,6 +33,11 @@ const userSchema = new mongoose.Schema({
         lowercase:true
     },
 
+    password:{
+        type: String,
+        require: true
+    },
+
     createdAt: {
         type: Date,
         default: Date.now
