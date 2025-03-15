@@ -7,6 +7,16 @@ import Registration from './pages/Registration'
 import Login from './pages/Login'
 import About from './pages/About'
 import Dashboard from './pages/Dashboard'
+import AddMoney from '../src/pages/dashboardPages/AddMoney'
+import AccInfo from '../src/pages/dashboardPages/AccInfo'
+import Statement from '../src/pages/dashboardPages/Statement'
+import ResetPass from '../src/pages/dashboardPages/ResetPass'
+import SendMoney from '../src/pages/dashboardPages/SendMoney'
+
+
+
+import { ToastContainer } from 'react-toastify'
+
 
 const App = () => {
   return (
@@ -24,9 +34,19 @@ const App = () => {
 
       <Routes>
 
-        <Route path='dashboard' element={<Dashboard />} />
+        <Route path='dashboard' element={<Dashboard />}>
+          <Route path='addmoney' element={<AddMoney/>}/>
+          <Route path='accountInfo' element={<AccInfo/>}/>
+          <Route path='statement' element ={<Statement />}/>
+          <Route path='sendmoney' element ={<SendMoney />}/>
+          <Route path='resetpass' element ={<ResetPass />}/>
+        </Route>
       </Routes>
       </BrowserRouter>
+
+      
+        <ToastContainer />
+
     </>
   )
 }

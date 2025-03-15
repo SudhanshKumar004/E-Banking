@@ -20,7 +20,7 @@
 
 .navbar-brand
 {
-    font-size: 25px;
+    font-size: 28px;
     font-weight: 900;
     color: #154d57;
     align-items: center;
@@ -48,12 +48,12 @@
 
 .nav-link
 {
-    font-size: 22px;
-    font-weight:500;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 28px;
+    font-weight:700;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #000000;
     align-items: center;
-    margin-left: 15px;
+    margin-left: 18px;
 }
 
 .nav-link .navIcons
@@ -63,7 +63,7 @@
 
 .nav-link:hover
 {
-    color:#154d57;
+    color:teal;
     transform: translateY(-3px);
     transition: transform 0.1s ease-in-out;
 }
@@ -240,8 +240,6 @@
 {
     color: #154d57;
 }
-
-
 
 
 

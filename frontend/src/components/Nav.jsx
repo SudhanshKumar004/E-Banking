@@ -20,7 +20,7 @@ const TopNav = () => {
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
       <Container className='navContainer'>
-        <Navbar.Brand href="#home">E-<span>Banking</span></Navbar.Brand>
+        <Navbar.Brand href="#home">E-<span>Banking</span></Navbar.Brand>  <h1>|</h1>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

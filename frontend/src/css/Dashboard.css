@@ -1,0 +1,90 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.navbar {
+  background: linear-gradient(90deg, black, teal);
+  color: white;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-logout {
+  background-color: red;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dashboard-main {
+  display: flex;
+  height: 100%;
+}
+
+.rightnav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.welcomeLine{
+    font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #2a2a2a;
+  padding: 15px;
+  height: 100%;
+}
+
+.sidebar .link{
+    text-decoration: none;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px;
+  color: white;
+  cursor: pointer;
+  border-bottom: 1px solid gray;
+}
+
+.sidebar li:hover {
+  background-color: #444;
+}
+
+.dashboard-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.btn-add {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+input {
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
