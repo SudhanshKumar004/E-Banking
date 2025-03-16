@@ -4,7 +4,7 @@
   height: 100vh;
 }
 
-.navbar {
+.navbar1 {
   background: linear-gradient(90deg, black, teal);
   color: white;
   padding: 25px;
@@ -70,6 +70,7 @@
 .dashboard-content {
   flex-grow: 1;
   padding: 20px;
+  background-color:darkgray;
 }
 
 .btn-add {

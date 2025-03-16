@@ -8,6 +8,7 @@ import { ImHome } from "react-icons/im";
 import { FaInfoCircle } from "react-icons/fa";
 import { RiLoginCircleLine } from "react-icons/ri";
 import { FaRegIdBadge } from "react-icons/fa";
+import '../css/Nav.css'
 
 
 
