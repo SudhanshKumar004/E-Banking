@@ -6,4 +6,8 @@ const userController = require("../controller/userController")
 route.post("/registration", userController.registration)
 route.post("/login", userController.Login)
 route.post("/authentication", userController.Authentication)
+route.post("/resetpass", userController.PassReset)
+
+
+
 module.exports = route;

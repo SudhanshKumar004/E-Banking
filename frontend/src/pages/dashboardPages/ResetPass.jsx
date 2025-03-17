@@ -1,53 +1,31 @@
 import React, { useState } from "react";
-
+import BASE_URL from "../../config/Api_base";
+import axios from "axios";
 const ResetPassword = () => {
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [message, setMessage] = useState("");
+  
+  const handleSubmit=async()=>{
+    let id = localStorage.getItem("custId")
+    
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    try {
 
-    if (password !== confirmPassword) {
-      setMessage("Passwords do not match!");
-    } else if (password.length < 6) {
-      setMessage("Password must be at least 6 characters long.");
-    } else {
-      setMessage("Password reset successfully!");
-      // Here, you can integrate API call to reset password in the backend
+      let api = `${BASE_URL}/customer/resetpass`;
+    let response = await axios.post(api, {custId:id})
+    console.log(response.data);
+
+    } catch (error) {
+     console.log(error);
+      
     }
-  };
+    
+  }
 
   return (
-    <div className="reset-password-container">
-      <h2>Reset Your Password</h2>
-      <p>Please enter your new password below.</p>
-      {message && <p className="message">{message}</p>}
-
-      <form onSubmit={handleSubmit}>
-        <div className="input-group">
-          <label>New Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-
-        <div className="input-group">
-          <label>Confirm Password:</label>
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </div>
-
-        <button type="submit" className="reset-button">Reset Password</button>
-      </form>
-    </div>
+    <>
+    <h2 className="resetpass">Looks like you want to reset your password!</h2>
+    <h3>Password Reset:</h3> <button className="passReset" onClick={handleSubmit}>Click Here!</button>
+    <h4>Reset Your Password Via Email</h4>
+    </>
   );
 };
 

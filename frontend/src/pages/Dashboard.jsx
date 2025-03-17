@@ -24,7 +24,7 @@ const Dashboard = () => {
     <div className="dashboard-container">
   
       <div className="navbar1">
-        <h2>My Bank</h2>
+        <h2 className="navHead">My Bank</h2>
         <div className="rightnav">
           <h1 className="welcomeLine"> Welcome:
           {localStorage.getItem("name")}😊

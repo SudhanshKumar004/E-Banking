@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import BASE_URL from '../config/Api_base';
 import axios from "axios"
+import { toast } from 'react-toastify';
 
 
 const Registration = () => {
@@ -29,6 +30,15 @@ const Registration = () => {
       try {
         let response = await axios.post(api, input);
         console.log(response.data);
+        toast.success("Login Successfully", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "colored",
+            });
         nav("/login")
 
       } catch (error) {
