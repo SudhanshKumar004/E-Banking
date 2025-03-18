@@ -423,19 +423,40 @@
 }
 
 
-.reset-password-container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.resetpass {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.resetpass {
-  color: #333;
+h3, h4 {
+    color: #555;
+    text-align: center;
+    margin: 8px 0;
 }
+
+.passReset {
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.passReset:hover {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    transform: scale(1.05);
+}
+
 
 p {
   color: #666;
@@ -477,4 +498,40 @@ p {
 
 .reset-button:hover {
   background: #0056b3;
+}
+
+/* Full-Width Account Info Page */
+.account-page {
+    padding: 50px 100px;
+    font-family: "Poppins", sans-serif;
+}
+
+.account-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.account-info p {
+    font-size: 20px;
+    color: #333;
+    margin: 15px 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.account-info p span {
+    font-weight: bold;
+    color: #000;
+}
+
+.loading {
+    text-align: center;
+    font-size: 20px;
+    color: #888;
+    margin-top: 20px;
 }

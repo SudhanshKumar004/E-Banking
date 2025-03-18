@@ -118,7 +118,14 @@ const PassReset = async (req, res) => {
             text: `Dear ${user.firstname},\n\nYour password has been reset successfully.\nYour New Password is: ${password}\n\nFor security, please keep it safe 😊!`
         };
 
-        await transporter.sendMail(mailOptions);
+        await transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+        console.error("Error sending email:", error);
+    } else {
+        console.log("Email sent:", info.response);
+    }
+});
+
 
         res.status(200).json({ message: "Password reset & email sent successfully" });
 
@@ -128,11 +135,30 @@ const PassReset = async (req, res) => {
     }
 };
 
+const AccInfo = async (req,res)=>{
+    const {custid} = req.body;
+    
+    try {
+
+        let Info = await userModel.findById(custid)
+
+        if (!Info) {
+            return res.status(404).send({ message: "User not found" });
+        }
+
+        res.status(200).send(Info);
+        
+    } catch (error)
+     {
+        res.status(400).send({message:"Error Loading Data"})
+    }
+}
 
 
 module.exports = {
     registration,
     Login,
     Authentication,
-    PassReset
+    PassReset,
+    AccInfo
 }

@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import BASE_URL from "../../config/Api_base";
 import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+
+
+
 const ResetPassword = () => {
   
+const nav = useNavigate();
+
   const handleSubmit=async()=>{
     let id = localStorage.getItem("custId")
     
@@ -11,7 +18,18 @@ const ResetPassword = () => {
 
       let api = `${BASE_URL}/customer/resetpass`;
     let response = await axios.post(api, {custId:id})
-    console.log(response.data);
+    console.log(response.data.message);
+    
+    toast.success(response.data.message, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                });
+    
+                // nav("/login")
 
     } catch (error) {
      console.log(error);
