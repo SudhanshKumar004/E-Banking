@@ -24,10 +24,10 @@ const Dashboard = () => {
     <div className="dashboard-container">
   
       <div className="navbar1">
-        <h2 className="navHead">My Bank</h2>
+        <h2 className="navHead">People's Bank</h2>
         <div className="rightnav">
-          <h1 className="welcomeLine"> Welcome:
-          {localStorage.getItem("name")}😊
+          <h1 className="welcomeLine"> Welcome: &nbsp;
+           {localStorage.getItem("name")}😊
           </h1>
 
           <button onClick={logout} className="btn-logout">
@@ -43,9 +43,9 @@ const Dashboard = () => {
           <ul>
             
             <Link to={"accountInfo"} className="link"><li>🏦 Account Info</li> </Link>
-            <Link to={"addmoney"} className="link"><li>💰 Add Money</li> </Link>
             <Link to={"statement"} className="link"><li>📜 Account Statement</li></Link>
-            <Link to={"sendmoney"} className="link"><li>💸 Send Money</li></Link>
+            <Link to={"addmoney"} className="link"><li>💰 Add Money</li> </Link>
+            <Link to={"withdrawmoney"} className="link"><li>💸 Withdraw Money</li></Link>
             <Link to={"resetpass"} className="link"><li>🔒 Reset Password</li></Link>
           </ul>
         </div>

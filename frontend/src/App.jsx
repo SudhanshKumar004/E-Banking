@@ -11,9 +11,8 @@ import AddMoney from '../src/pages/dashboardPages/AddMoney'
 import AccInfo from '../src/pages/dashboardPages/AccInfo'
 import Statement from '../src/pages/dashboardPages/Statement'
 import ResetPass from '../src/pages/dashboardPages/ResetPass'
-import SendMoney from '../src/pages/dashboardPages/SendMoney'
 
-
+import WithdrawMoney from '../src/pages/dashboardPages/WithdrawMoney'
 
 import { ToastContainer } from 'react-toastify'
 
@@ -38,7 +37,7 @@ const App = () => {
           <Route path='addmoney' element={<AddMoney/>}/>
           <Route path='accountInfo' element={<AccInfo/>}/>
           <Route path='statement' element ={<Statement />}/>
-          <Route path='sendmoney' element ={<SendMoney />}/>
+          <Route path='withdrawmoney' element ={<WithdrawMoney />}/>
           <Route path='resetpass' element ={<ResetPass />}/>
         </Route>
       </Routes>

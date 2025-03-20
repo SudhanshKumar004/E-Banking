@@ -2,7 +2,8 @@ const userModel = require("../model/userModel")
 const MyPass = require("../utils/myPassword")
 const nodemailer = require('nodemailer');
 const jwt = require("jsonwebtoken")
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
+const transactionsModel = require("../model/transactionsModel");
 
 
 
@@ -76,9 +77,7 @@ const Login = async(req,res)=>{
 
     const Authentication = async(req,res)=>{
     const token = req.header("x-auth-token");
-    console.log(token);
     const verify = await jwt.verify(token,process.env.SECRET_KEY)
-    console.log(verify);
     const User = await userModel.findById(verify.id).select("-password")
     res.send(User)
 }
@@ -87,8 +86,6 @@ const Login = async(req,res)=>{
 
 const PassReset = async (req, res) => {
     const { custId } = req.body;
-
-    console.log(custId);
     
     try {
 
@@ -154,11 +151,37 @@ const AccInfo = async (req,res)=>{
     }
 }
 
+const MoneyTransaction = async (req, res) => {
+    const { amount, custid, status } = req.body;
+
+    try {
+        let transaction = await transactionsModel.create({
+            customerid: custid,
+            amount: amount,
+            status: status
+        });
+
+        if (!transaction) {
+            return res.status(400).send({ msg: "Transaction Failed!" });
+        }
+
+        if (status === "debit") {
+            res.status(200).send({ msg: "Withdrawal Successful!" });
+        } else {
+            res.status(200).send({ msg: "Amount Added Successfully!" });
+        }
+
+    } catch (error) {
+        res.status(400).send({ msg: "Something went wrong :(" });
+    }
+};
+
 
 module.exports = {
     registration,
     Login,
     Authentication,
     PassReset,
-    AccInfo
+    AccInfo,
+    MoneyTransaction
 }

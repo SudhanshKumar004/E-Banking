@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import BASE_URL from '../../config/Api_base';
 import axios from 'axios';
+import '../../css/AccInfo.css'
 
 const AccInfo = () => {
 

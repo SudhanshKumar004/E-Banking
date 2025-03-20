@@ -3,7 +3,7 @@ import BASE_URL from "../../config/Api_base";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import '../../css/ResetPassword.css'
 
 
 const ResetPassword = () => {
