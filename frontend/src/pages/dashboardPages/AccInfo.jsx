@@ -7,6 +7,7 @@ const AccInfo = () => {
 
   const [mydata, setMydata] = useState([]);
 
+
   const id = localStorage.getItem("custId")
 
   const loadData = async()=>{
@@ -24,6 +25,8 @@ const AccInfo = () => {
       
     }
   }
+
+  
 
 
  useEffect(()=>{

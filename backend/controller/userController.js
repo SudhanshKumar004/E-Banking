@@ -176,6 +176,18 @@ const MoneyTransaction = async (req, res) => {
     }
 };
 
+const BalanceQuiry = async(req,res)=>{
+    const { custid } = req.body;
+   
+    try {
+         const Balance = await transactionsModel.find({customerid:custid})
+         res.status(200).send({"records":Balance})
+    }
+    
+    catch (error) {
+        res.status(400).send({msg:"Error Fetching Data"})
+    }
+}
 
 module.exports = {
     registration,
@@ -183,5 +195,6 @@ module.exports = {
     Authentication,
     PassReset,
     AccInfo,
-    MoneyTransaction
+    MoneyTransaction,
+    BalanceQuiry
 }

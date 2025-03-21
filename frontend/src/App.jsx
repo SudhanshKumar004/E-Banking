@@ -15,6 +15,7 @@ import ResetPass from '../src/pages/dashboardPages/ResetPass'
 import WithdrawMoney from '../src/pages/dashboardPages/WithdrawMoney'
 
 import { ToastContainer } from 'react-toastify'
+import ShowBalance from './pages/dashboardPages/ShowBalance'
 
 
 const App = () => {
@@ -39,6 +40,8 @@ const App = () => {
           <Route path='statement' element ={<Statement />}/>
           <Route path='withdrawmoney' element ={<WithdrawMoney />}/>
           <Route path='resetpass' element ={<ResetPass />}/>
+          <Route path='showbalance' element ={<ShowBalance />}/>
+
         </Route>
       </Routes>
       </BrowserRouter>

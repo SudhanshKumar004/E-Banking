@@ -1,4 +1,9 @@
 
+.body{
+background: url("https://cdn.wallpapersafari.com/86/17/S2NFUT.jpg");
+}
+
+
 .addmoney-container {
   width: 100%;
   max-width: 1100px;
@@ -95,6 +100,8 @@ input:focus {
   transform: scale(1.05);
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
 }
+
+
 
 @media (max-width: 768px) {
   .addmoney-container {

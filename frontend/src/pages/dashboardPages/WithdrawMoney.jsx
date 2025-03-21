@@ -55,12 +55,11 @@ const WithdrawMoney = () => {
 
         <div className="quick-add">
           <h2 className="quick-label">Quick Withdraw</h2>
-          {quickmoney.map((amt) => (
-            <button key={amt} onClick={() => setAmount(amt)}>₹{amt}</button>
+          {quickmoney.map((key) => (
+            <button onClick={() => setAmount(key)}>₹{key}</button>
           ))}
         </div>
 
-        {/* Input Field */}
         <div className="input-container">
           <label className="withdrawmoney-label">Enter Withdrawal Amount:</label>
           <div className="inputbox">
