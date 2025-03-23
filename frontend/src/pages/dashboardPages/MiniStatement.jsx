@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import BASE_URL from '../../config/Api_base'
 import axios from 'axios'
-import '../../css/ministatement.css'
+import '../../css/Ministatement.css'
 import { toast } from 'react-toastify'
 
 
