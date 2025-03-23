@@ -35,3 +35,40 @@
     color: #888;
     margin-top: 20px;
 }
+
+
+@media (max-width: 768px) {
+  .account-page {
+    padding: 20px 30px;
+  }
+
+  .account-title {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .account-info p {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  
+}
+
+@media (max-width: 428px) {
+  .account-page {
+    padding: 20px;
+  }
+
+  .account-title {
+    font-size: 18px;
+  }
+
+  .account-info p {
+    font-size: 14px;
+  }
+
+  .account-info p span {
+    margin-right: 15px
+  }
+}

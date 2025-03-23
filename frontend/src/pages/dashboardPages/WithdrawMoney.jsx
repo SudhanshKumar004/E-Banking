@@ -127,11 +127,10 @@ const WithdrawMoney = () => {
         <div className="input-container">
           <label className="withdrawmoney-label">Enter Withdrawal Amount:</label>
           <div className="inputbox">
-            <span className="currency-symbol">₹</span>
             <input
               type="number"
               value={amount}
-              placeholder="0.00"
+              placeholder="₹ 0.00"
               onChange={(e) => setAmount(e.target.value)}
             />
           </div>

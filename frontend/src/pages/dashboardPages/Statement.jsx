@@ -51,6 +51,7 @@ const Statement = () => {
     <>
       <h2 className="totalbalance">Total Balance : {totalBalance}</h2>
     <div className="statement-container">
+      <div className="table-wrapper">
       <table className="statement-table">
         <thead>
           <tr>
@@ -71,6 +72,7 @@ const Statement = () => {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
     </>
   );

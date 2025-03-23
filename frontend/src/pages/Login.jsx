@@ -43,7 +43,15 @@ const Login = () => {
         } 
         catch (error) {
             console.log(error);
-            alert(error.response.data)
+            toast.error(error.response.data, {
+               position: 'top-center',
+               autoClose: 3000,
+               hideProgressBar: false,
+               closeOnClick: true,
+               pauseOnHover: false,
+               draggable: true,
+               theme: 'dark'
+         });
         }
     }
 

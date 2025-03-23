@@ -52,15 +52,6 @@ background: url("https://cdn.wallpapersafari.com/86/17/S2NFUT.jpg");
   width: 100%;
 }
 
-.currency-symbol {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  font-weight: bold;
-  color: #F4A261; 
-}
 
 input {
   width: 100%;
@@ -120,4 +111,5 @@ input:focus {
     font-size: 18px;
     padding: 14px;
   }
+
 }

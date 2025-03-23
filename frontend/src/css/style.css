@@ -440,3 +440,99 @@
   font-weight: bolder;
   color:seagreen;
 }
+
+
+@media (max-width: 428px) {
+  .topheader {
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .topheader img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .navbar-brand {
+    font-size: 22px;
+  }
+
+  .nav-link {
+    font-size: 18px;
+    margin-left: 20px;
+  }
+
+  .navContainer {
+    text-align: center;
+    padding: 5px;
+  }
+
+  .hero {
+    height: 60vh;
+    background-position: center top;
+  }
+
+  .form-container,
+  .form-container2 {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .form-container input,
+  .form-container2 input {
+    width: 100%;
+  }
+
+  .form-container button,
+  .form-container2 button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .feature-grid,
+  .blog-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card,
+  .blog-card {
+    width: 90%;
+  }
+
+  .about-title {
+    font-size: 28px;
+  }
+
+  .about-subtitle {
+    font-size: 22px;
+  }
+
+  .about-content {
+    padding: 20px;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .balancedisplay {
+    padding: 15px;
+  }
+
+  .balancedisplay h1 {
+    font-size: 25px;
+  }
+
+  .balancedisplay h2 {
+    font-size: 24px;
+  }
+}

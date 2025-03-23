@@ -42,7 +42,15 @@ const Registration = () => {
         nav("/login")
 
       } catch (error) {
-        console.log(error);
+        toast.error(error.response.data, {
+              position: 'top-center',
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              theme: 'dark'
+        });
         
       }
     }

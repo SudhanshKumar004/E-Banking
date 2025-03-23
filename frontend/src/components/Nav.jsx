@@ -21,7 +21,7 @@ const TopNav = () => {
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
       <Container className='navContainer'>
-        <Navbar.Brand href="#home">People's <span>Bank</span></Navbar.Brand>  <h1>|</h1>
+        <Navbar.Brand href="#home">People's <span>Bank</span></Navbar.Brand> 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

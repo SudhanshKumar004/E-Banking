@@ -9,6 +9,7 @@
 }
 
 .totalbalance {
+  width: 100%;
   text-align: center;
   font-size: 32px;
   font-weight: bold;
@@ -50,12 +51,60 @@
   text-align: left;
 }
 
-.statement-table td:nth-child(3) { 
-  color: red;
-  font-weight: bold;
-}
 
-.statement-table td:nth-child(4) {
-  color: green;
-  font-weight: bold;
+@media screen and (max-width: 428px) {
+  .statement-container {
+    max-width: 100%;
+    margin: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+  }
+
+  .totalbalance {
+    font-size: 15px;
+    margin-bottom: 0px;
+    padding: 8px;
+    border-radius: 6px;
+    text-align: start;
+
+  }
+ 
+
+ 
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .statement-table {
+    width: 100%;
+    min-width: 600px;
+    font-size: 14px;
+    font-weight: normal;
+    white-space: nowrap; 
+  }
+
+  .statement-table thead {
+    font-size: 13px;
+  }
+
+  .statement-table th,
+  .statement-table td {
+    padding: 6px;
+    text-align: left;
+  }
+
+  .statement-table tbody tr {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .statement-table tbody tr:hover {
+    background: #f9f9f9;
+  }
+
+  .dashboard-content{
+    width: 80%;
+  }
 }

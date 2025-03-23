@@ -12,6 +12,13 @@ const registration =async (req,res) =>{
     const { fname, lname, mobile, address, city, email} = req.body;
     const password = MyPass.passGenerate();
     const accNumber = accNo.accNoGenerate();
+
+    let User = await userModel.findOne({email:email})
+
+    if(User)
+    {
+       return res.status(400).send("Email already registered!")
+    }
    
 try {
 
@@ -198,13 +205,45 @@ const AccStatement = async (req,res) =>{
 }
 
 const MiniStatement = async (req,res) =>{
-    const {custid, fromdate, endDate} = req.body;
+    const {custid, fromDate, endDate} = req.body;
     try {
+        if( !fromDate || !endDate)
+        {
+            return res.status(400).send("Both dates are required!")
+        }
 
+        const fromdate = new Date(fromDate);
+        const enddate = new Date(endDate);
+
+        if(fromdate > enddate)
+        {
+           return res.status(400).send("'From' Date can not be after 'To' Date");
+        }
+
+        if(fromdate.getTime() === enddate.getTime())
+        {
+           return res.status(400).send("Please Select two different Date!");
+        }
+
+        const transactions = await transactionsModel.find({customerid:custid,
+            transactionDate:{
+                $gte: fromdate,
+                $lte: enddate
+            }
+        }).sort({transactionDate:-1})
+
+        if(!transactions.length)
+        {
+           return res.status(400).send("No Transactions found.")
+        }
+
+        res.status(200).send(transactions)
     } 
     
     catch (error) {
+        console.log(error);
         
+        res.status(400).send("Server Error :(")
     }
 }
 

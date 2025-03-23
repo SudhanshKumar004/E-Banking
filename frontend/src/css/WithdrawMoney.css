@@ -37,15 +37,6 @@
   width: 100%;
 }
 
-.currency-symbol {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  font-weight: bold;
-  color: #F4A261; 
-}
 
 input {
   width: 100%;
@@ -142,27 +133,94 @@ input:focus {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .withdrawmoney-head {
-    font-size: 36px;
-  }
-
   .withdrawmoney-container {
     padding: 40px 5%;
   }
 
-
-
-
-.quick-label {
-    font-size: 20px;
+  .withdrawmoney-head {
+    font-size: 32px;
   }
 
-  .quick-add {
-    padding: 10px;
+  .input-container {
+    max-width: 400px;
+  }
+
+  input {
+    font-size: 16px;
+    padding: 10px 15px 10px 35px;
+  }
+
+  .withdrawmoney-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .currency-symbol {
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: #F4A261; 
+}
+  .quick-label {
+    font-size: 18px;
   }
 
   .quick-add button {
-    padding: 8px 15px;
     font-size: 16px;
+    padding: 8px 15px;
+  }
+
+  .money-animation img {
+    width: 200px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 428px) {
+  .withdrawmoney-container {
+    padding: 30px 5%;
+  }
+
+  .withdrawmoney-head {
+    font-size: 26px;
+  }
+
+  .input-container {
+    max-width: 100%;
+  }
+
+  .withdrawmoney-label {
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 8px 15px 8px 35px;
+  }
+
+  .withdrawmoney-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .quick-label {
+    font-size: 16px;
+  }
+
+  .quick-add {
+    gap: 8px;
+  }
+
+  .quick-add button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .money-animation img {
+    width: 150px;
+    height: 40px;
   }
 }
