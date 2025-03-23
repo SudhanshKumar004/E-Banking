@@ -1,0 +1,61 @@
+.statement-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.totalbalance {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: yellowgreen;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #141E30;
+  border-radius: 8px;
+}
+
+.statement-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.statement-table thead {
+  background: #141E30;
+  color: #F4A261;
+}
+
+.statement-table th {
+  padding: 12px;
+  text-align: left;
+}
+
+.statement-table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background 0.3s;
+}
+
+.statement-table tbody tr:hover {
+  background: #f1f1f1;
+}
+
+.statement-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.statement-table td:nth-child(3) { 
+  color: red;
+  font-weight: bold;
+}
+
+.statement-table td:nth-child(4) {
+  color: green;
+  font-weight: bold;
+}

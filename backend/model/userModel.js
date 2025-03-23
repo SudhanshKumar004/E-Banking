@@ -38,6 +38,11 @@ const userSchema = new mongoose.Schema({
         require: true
     },
 
+    accountNo:{
+        type:String,
+        require:true
+    },
+    
     createdAt: {
         type: Date,
         default: Date.now

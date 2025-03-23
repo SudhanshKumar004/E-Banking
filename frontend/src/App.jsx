@@ -16,6 +16,7 @@ import WithdrawMoney from '../src/pages/dashboardPages/WithdrawMoney'
 
 import { ToastContainer } from 'react-toastify'
 import ShowBalance from './pages/dashboardPages/ShowBalance'
+import MiniStatement from './pages/dashboardPages/MiniStatement'
 
 
 const App = () => {
@@ -37,10 +38,12 @@ const App = () => {
         <Route path='dashboard' element={<Dashboard />}>
           <Route path='addmoney' element={<AddMoney/>}/>
           <Route path='accountInfo' element={<AccInfo/>}/>
+          <Route index element={<AccInfo/>}/>
           <Route path='statement' element ={<Statement />}/>
           <Route path='withdrawmoney' element ={<WithdrawMoney />}/>
           <Route path='resetpass' element ={<ResetPass />}/>
           <Route path='showbalance' element ={<ShowBalance />}/>
+          <Route path='ministatement' element ={<MiniStatement />}/>
 
         </Route>
       </Routes>

@@ -10,6 +10,8 @@ route.post("/resetpass", userController.PassReset)
 route.post("/accInfo", userController.AccInfo)
 route.post("/moneytransaction", userController.MoneyTransaction)
 route.post("/balancequiry", userController.BalanceQuiry)
+route.post("/accStatement", userController.AccStatement)
+route.post("/ministatement", userController.MiniStatement)
 
 
 

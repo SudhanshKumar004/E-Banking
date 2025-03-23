@@ -4,12 +4,14 @@ const nodemailer = require('nodemailer');
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt");
 const transactionsModel = require("../model/transactionsModel");
+const accNo = require("../utils/AccNo")
 
 
 
 const registration =async (req,res) =>{
     const { fname, lname, mobile, address, city, email} = req.body;
     const password = MyPass.passGenerate();
+    const accNumber = accNo.accNoGenerate();
    
 try {
 
@@ -21,7 +23,8 @@ try {
         address:address,
         city:city,
         email:email,
-        password:hashPassword
+        password:hashPassword,
+        accountNo:accNumber
     })
   
 
@@ -44,7 +47,7 @@ var mailOptions = {
 await transporter.sendMail(mailOptions);
 
 
-res.status(200).send("data saved & email Send") 
+res.status(200).send("You Are Registered SuccessFully!") 
 } catch (error) {
     res.status(400).send(error)
 }  
@@ -85,51 +88,32 @@ const Login = async(req,res)=>{
 
 
 const PassReset = async (req, res) => {
-    const { custId } = req.body;
-    
-    try {
+    const { custId , oldpassword, newpassword, repassword} = req.body;
 
-        const user = await userModel.findById(custId);
+    try {
+     let Customer = await userModel.findById(custId);
+
+     const passMatch = await bcrypt.compare(oldpassword, Customer.password);
         
-        if (!user) {
-            return res.status(404).json({ message: "User not found" });
+     if (!passMatch) {
+            return res.status(400).send("Old Password Does Not Matched!");
         }
 
-        const password = MyPass.passGenerate();
-        const hashPassword = await bcrypt.hash(password, 10);
-
-        await userModel.findByIdAndUpdate(custId, { password: hashPassword });
-
-        var transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: 'sudhanshkr04@gmail.com',
-                pass: 'ypnv vspk hiri uwwd' 
+        
+        if(newpassword != repassword)
+            {
+                return res.status(400).send("New Password Does Not Matched")
             }
-        });
-
-        const mailOptions = {
-            from: 'sudhanshkr04@gmail.com',
-            to: user.email,
-            subject: 'Password Reset Successful',
-            text: `Dear ${user.firstname},\n\nYour password has been reset successfully.\nYour New Password is: ${password}\n\nFor security, please keep it safe 😊!`
-        };
-
-        await transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-        console.error("Error sending email:", error);
-    } else {
-        console.log("Email sent:", info.response);
+            
+            const hashPassword = await bcrypt.hash(newpassword,10);
+        await userModel.findByIdAndUpdate(custId, {password:hashPassword})
+        res.status(200).send("Password Updated Successfully!")
     }
-});
-
-
-        res.status(200).json({ message: "Password reset & email sent successfully" });
-
-    } catch (error) {
-        console.error("Password reset error:", error);
-        res.status(500).json({ message: "Internal server error" });
+    
+    catch (error) {
+        res.status(400).send(error)
     }
+
 };
 
 const AccInfo = async (req,res)=>{
@@ -152,13 +136,17 @@ const AccInfo = async (req,res)=>{
 }
 
 const MoneyTransaction = async (req, res) => {
-    const { amount, custid, status } = req.body;
+
+    console.log(req.body);
+    
+    const { amount, custid, status, description } = req.body;
 
     try {
         let transaction = await transactionsModel.create({
             customerid: custid,
             amount: amount,
-            status: status
+            status: status,
+            description:description
         });
 
         if (!transaction) {
@@ -167,7 +155,9 @@ const MoneyTransaction = async (req, res) => {
 
         if (status === "debit") {
             res.status(200).send({ msg: "Withdrawal Successful!" });
-        } else {
+        } 
+        
+        else {
             res.status(200).send({ msg: "Amount Added Successfully!" });
         }
 
@@ -182,10 +172,39 @@ const BalanceQuiry = async(req,res)=>{
     try {
          const Balance = await transactionsModel.find({customerid:custid})
          res.status(200).send({"records":Balance})
+         
     }
     
     catch (error) {
         res.status(400).send({msg:"Error Fetching Data"})
+    }
+}
+
+
+const AccStatement = async (req,res) =>{
+    const { custid } = req.body;
+
+    try {
+         const Statement = await transactionsModel.find({customerid:custid}).sort({transactionDate:-1}).limit(10)
+         const Balance = await transactionsModel.find({customerid:custid})
+         res.status(200).send({statement:Statement, balance:Balance})
+         
+    }
+    
+    catch (error) {
+        res.status(400).send({msg:"Error Fetching Data"})
+    }
+
+}
+
+const MiniStatement = async (req,res) =>{
+    const {custid, fromdate, endDate} = req.body;
+    try {
+
+    } 
+    
+    catch (error) {
+        
     }
 }
 
@@ -196,5 +215,7 @@ module.exports = {
     PassReset,
     AccInfo,
     MoneyTransaction,
-    BalanceQuiry
+    BalanceQuiry,
+    AccStatement,
+    MiniStatement
 }

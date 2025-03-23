@@ -5,6 +5,8 @@ const transactionSchema = new mongoose.Schema({
     amount:Number,
 
     status:String,
+
+    description:String,
     
     customerid : {
         type: mongoose.Schema.Types.ObjectId,

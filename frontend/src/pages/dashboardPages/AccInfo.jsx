@@ -43,6 +43,8 @@ if (!mydata) {
     <div className="account-page">
       <h2 className="account-title">Account Information</h2>
       <div className="account-info">
+        <p><span>Account Number:</span> {mydata.accountNo}</p>
+        <p><span>IFSC Number:</span> PPB00001133422</p>
         <p><span>Account Holder Name:</span> {mydata.firstname} {mydata.lastname}</p>
         <p><span>Email:</span> {mydata.email}</p>
         <p><span>Mobile No.:</span> {mydata.mobile}</p>

@@ -422,3 +422,21 @@
   color: #ffffff;
 }
 
+.balancedisplay {
+  background-color:#bbb;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* text-align: center; */
+}
+
+.balancedisplay h1 {
+  font-size: 45px;
+  color: #333;
+}
+
+.balancedisplay h2 {
+  font-size: 40px;
+  font-weight: bolder;
+  color:seagreen;
+}

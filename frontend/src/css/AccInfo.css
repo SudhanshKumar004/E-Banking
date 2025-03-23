@@ -5,9 +5,9 @@
 }
 
 .account-title {
-    font-size: 28px;
+    font-size: 38px;
     font-weight: bold;
-    color: #222;
+    color:whitesmoke;
     text-align: left;
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
@@ -15,16 +15,18 @@
 }
 
 .account-info p {
-    font-size: 20px;
-    color: #333;
-    margin: 15px 0;
-    padding: 15px 0;
+    font-size: 28px;
+    color:#e2ac9f;
+    /* margin: 15px 0; */
+    padding: 10px 0;
     border-bottom: 1px solid #ddd;
 }
 
 .account-info p span {
     font-weight: bold;
-    color: #000;
+    font-family: sans-serif;
+    color:#141E30;
+    margin-right: 35px;
 }
 
 .loading {

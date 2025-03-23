@@ -45,6 +45,7 @@ const Dashboard = () => {
             <Link to={"accountInfo"} className="link"><li>🏦 Account Info</li> </Link>
             <Link to={"showbalance"} className="link"><li>💵 Show Balance</li> </Link>
             <Link to={"statement"} className="link"><li>📜 Account Statement</li></Link>
+            <Link to={"ministatement"} className="link"><li>📄 Mini Statement</li></Link>
             <Link to={"addmoney"} className="link"><li>💰 Add Money</li> </Link>
             <Link to={"withdrawmoney"} className="link"><li>💸 Withdraw Money</li></Link>
             <Link to={"resetpass"} className="link"><li>🔒 Reset Password</li></Link>

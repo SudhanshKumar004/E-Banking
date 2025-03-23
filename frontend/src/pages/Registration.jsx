@@ -30,7 +30,7 @@ const Registration = () => {
       try {
         let response = await axios.post(api, input);
         console.log(response.data);
-        toast.success("Login Successfully", {
+        toast.success("You are registered", {
             position: "top-center",
             autoClose: 3000,
             hideProgressBar: false,

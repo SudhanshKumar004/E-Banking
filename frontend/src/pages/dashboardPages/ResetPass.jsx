@@ -9,6 +9,11 @@ import '../../css/ResetPassword.css'
 const ResetPassword = () => {
   
 const nav = useNavigate();
+const [oldpassword,setOldpassword] = useState("")
+const [newpassword,setNewpassword] = useState("")
+const [repassword,setRepassword] = useState("")
+
+
 
   const handleSubmit=async()=>{
     let id = localStorage.getItem("custId")
@@ -17,10 +22,9 @@ const nav = useNavigate();
     try {
 
       let api = `${BASE_URL}/customer/resetpass`;
-    let response = await axios.post(api, {custId:id})
-    console.log(response.data.message);
+    let response = await axios.post(api, {custId:id, oldpassword:oldpassword, newpassword:newpassword,repassword:repassword})
     
-    toast.success(response.data.message, {
+    toast.success(response.data, {
                 position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -29,20 +33,27 @@ const nav = useNavigate();
                 draggable: true,
                 });
     
-                // nav("/login")
-
     } catch (error) {
-     console.log(error);
-      
+  
+     toast.error(error.response.data, {
+             position: 'top-center',
+             autoClose: 2000,
+           });
     }
     
   }
 
   return (
     <>
-    <h2 className="resetpass">Looks like you want to reset your password!</h2>
-    <h3>Password Reset:</h3> <button className="passReset" onClick={handleSubmit}>Click Here!</button>
-    <h4>Reset Your Password Via Email</h4>
+    <div className="pass-reset">
+    <h2 className="resetpass-head">Password Reset</h2>
+   
+   <h1 className="oldpass">Enter Old Password <input type="password" value={oldpassword} onChange={(e)=>{setOldpassword(e.target.value)}} /></h1>
+   <h1 className="newpass">Enter New Password <input type="password"  value={newpassword} onChange={(e)=>{setNewpassword(e.target.value)}} /></h1>
+   <h1 className="renewpass">Re-Enter New Password <input type="password"  value={repassword} onChange={(e)=>{setRepassword(e.target.value)}} /></h1>
+
+   <button onClick={handleSubmit}>Change Password</button>
+   </div>
     </>
   );
 };

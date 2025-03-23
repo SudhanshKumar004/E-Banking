@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import BASE_URL from '../../config/Api_base';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -8,6 +8,55 @@ const WithdrawMoney = () => {
   const [amount, setAmount] = useState('');
   const [showAnimation, setShowAnimation] = useState(false);
   const quickmoney = [100, 500, 1000, 5000];
+  const [netamount, setNetamount] = useState([]);
+  const [debit, setDebit] = useState(0);
+  const [credit, setCredit] = useState(0);
+  const [totalBalance, setTotalBalance] = useState(0);
+  const [description, setDescription] = useState("")
+  const [status, setStatus] = useState(false)
+  
+    const handleDescription = (e)=>{
+      setDescription(e.target.value);
+      console.log(description);
+      setStatus(true);
+    }
+
+
+  const id = localStorage.getItem("custId");
+
+  const loadData = async () => {
+    let api = `${BASE_URL}/customer/balancequiry`;
+
+    try {
+      let response = await axios.post(api,{ custid: id });
+
+      const records = response.data.records;
+      setNetamount(response.data.records);
+
+      let totalDebit = 0;
+      let totalCredit = 0;
+
+      records.map((key) => {
+
+        if (key.status === "debit") {
+          totalDebit += key.amount;
+
+        }
+        
+        if (key.status === "credit") {
+          totalCredit += key.amount;
+        }
+
+      });
+
+      setDebit(totalDebit);
+      setCredit(totalCredit);
+      setTotalBalance(totalCredit-totalDebit)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 
   const handleInput = async () => {
     if (!amount || amount <= 0) {
@@ -18,10 +67,18 @@ const WithdrawMoney = () => {
       return;
     }
 
-    setShowAnimation(true); // Show animation
+    if(amount >= totalBalance){
+      toast.error('Insufficient Amount', {
+        position: 'top-center',
+        autoClose: 2000,
+      });
+      return;
+    }
+
+    setShowAnimation(true);
 
     setTimeout(() => {
-      setShowAnimation(false); // Hide animation after 4 seconds
+      setShowAnimation(false); 
     }, 4000);
 
     let api = `${BASE_URL}/customer/moneytransaction`;
@@ -29,6 +86,7 @@ const WithdrawMoney = () => {
     try {
       let response = await axios.post(api, {
         amount: amount,
+         description: status == true ? description:"Withdraw Cash" ,
         custid: localStorage.getItem('custId'),
         status: 'debit'
       });
@@ -46,6 +104,12 @@ const WithdrawMoney = () => {
       });
     }
   };
+
+
+   useEffect(() => {
+    loadData();
+  }, []);
+
 
   return (
     <div className="withdrawmoney-container">
@@ -69,6 +133,19 @@ const WithdrawMoney = () => {
               value={amount}
               placeholder="0.00"
               onChange={(e) => setAmount(e.target.value)}
+            />
+          </div>
+        </div>
+
+         <div className="input-container">
+          <label className="addmoney-label">Enter Description (Optional)</label>
+          <div className="inputbox">
+            <span className="currency-symbol"></span>
+            <input
+              type="text"
+              value={description}
+              name='description'
+              onChange={handleDescription}
             />
           </div>
         </div>

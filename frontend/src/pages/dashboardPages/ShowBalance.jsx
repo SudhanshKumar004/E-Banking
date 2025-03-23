@@ -7,8 +7,6 @@ const ShowBalance = () => {
   const [debit, setDebit] = useState(0);
   const [credit, setCredit] = useState(0);
 
-  let netBalance = 0;
-
   const id = localStorage.getItem("custId");
 
   const loadData = async () => {
@@ -52,7 +50,7 @@ const ShowBalance = () => {
     <>
     <div className="balancedisplay">
       <h1>Total Available Balance</h1>
-      <h2 style={{color:"green"}}>Net Balance: {credit - debit}</h2>
+      <h2>Net Balance: {credit - debit}</h2>
       </div>
     </>
   );
