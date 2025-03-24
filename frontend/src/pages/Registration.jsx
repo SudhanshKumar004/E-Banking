@@ -19,7 +19,6 @@ const Registration = () => {
         let name = e.target.name;
         let value = e.target.value;
         setInput(values=>({...values, [name]:value}))
-        console.log(input);
         
     }
 
@@ -86,7 +85,7 @@ const Registration = () => {
   </Form.Group>
         
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email addres</Form.Label>
+    <Form.Label>Email address</Form.Label>
     <Form.Control type="email" name='email' onChange={handleInput} /> 
   </Form.Group>
 

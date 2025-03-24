@@ -9,7 +9,11 @@ const userRoute = require("./routes/userRoutes")
 const PORT = process.env.PORT || 8000;
 
 
-app.use(cors());
+app.use(cors({
+    origin: "https://e-banking-nu.vercel.app", 
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true 
+}));
 
 mongoose.connect(process.env.DBCONN).then(()=>{
     console.log("DB Connected!");    
