@@ -2,9 +2,11 @@ const userModel = require("../model/userModel")
 const MyPass = require("../utils/myPassword")
 const nodemailer = require('nodemailer');
 const jwt = require("jsonwebtoken")
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const transactionsModel = require("../model/transactionsModel");
 const accNo = require("../utils/AccNo")
+require("dotenv").config();
+
 
 
 
@@ -39,8 +41,8 @@ try {
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'sudhanshkr04@gmail.com',
-    pass: 'ypnv vspk hiri uwwd'
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   }
 });
 
@@ -81,7 +83,7 @@ const Login = async(req,res)=>{
     res.send({token, "customer":Customer});
         
     } catch (error) {
-        res.status(400).send(error)
+        res.status(400).send("Server Error")
     }
 }
 
